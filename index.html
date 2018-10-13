@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(Kristina M. Spurgin)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/amanita/scripts/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/amanita/scripts/reveal.js/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/amanita/scripts/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="author">Kristina M. Spurgin</h2><p class="date">Created: 2018-10-13 Sat 14:06</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgaae9140">1. research data</a>
+<ul>
+<li><a href="#/slide-org410bbfb">1.1. management (supporting researchers)</a></li>
+<li><a href="#/slide-org7600e01">1.2. discovering</a></li>
+<li><a href="#/slide-orga93ead6">1.3. working with</a></li>
+<li><a href="#/slide-org9b9dc42">1.4. publishing and/or preserving</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org84fd25d">2. collections as data</a></li>
+<li><a href="#/slide-org12ed4cc">3. patron data</a></li>
+<li><a href="#/slide-org0c7ef94">4. library data</a>
+<ul>
+<li><a href="#/slide-orgc40c6c9">4.1. data warehousing - connecting silos - leveraging external data</a></li>
+<li><a href="#/slide-orgd00cbd7">4.2. user privacy!</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<p>
+Data management in the transformative research library
+</p>
+<section>
+<section id="slide-orgaae9140">
+<h2 id="orgaae9140"><span class="section-number-2">1</span> research data</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</section>
+<section id="slide-org410bbfb">
+<h3 id="org410bbfb"><span class="section-number-3">1.1</span> management (supporting researchers)</h3>
+<p>
+data management plans to fulfill funding requirements, etc
+</p>
+</section>
+<section id="slide-org7600e01">
+<h3 id="org7600e01"><span class="section-number-3">1.2</span> discovering</h3>
+<p>
+how do we make data discoverable and help our users discover data to use in their research or to meet their information needs?
+</p>
+
+<p>
+data catalogs
+</p>
+
+<p>
+inclusion of data sources (ICPSR, Dataverse) in discovery layer (*challenges)
+</p>
+
+</section>
+<section id="slide-orga93ead6">
+<h3 id="orga93ead6"><span class="section-number-3">1.3</span> working with</h3>
+<p>
+providing expertise and education on using and creating data
+r
+gis
+etc
+</p>
+
+</section>
+<section id="slide-org9b9dc42">
+<h3 id="org9b9dc42"><span class="section-number-3">1.4</span> publishing and/or preserving</h3>
+<p>
+Handling data in IRs?
+Partnering with 
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org84fd25d">
+<h2 id="org84fd25d"><span class="section-number-2">2</span> collections as data</h2>
+<p>
+<a href="https://collectionsasdata.github.io/facets/">https://collectionsasdata.github.io/facets/</a>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org12ed4cc">
+<h2 id="org12ed4cc"><span class="section-number-2">3</span> patron data</h2>
+</section>
+</section>
+<section>
+<section id="slide-org0c7ef94">
+<h2 id="org0c7ef94"><span class="section-number-2">4</span> library data</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</section>
+<section id="slide-orgc40c6c9">
+<h3 id="orgc40c6c9"><span class="section-number-3">4.1</span> data warehousing - connecting silos - leveraging external data</h3>
+</section>
+<section id="slide-orgd00cbd7">
+<h3 id="orgd00cbd7"><span class="section-number-3">4.2</span> user privacy!</h3>
+<ul>
+<li>Becky Yoose</li>
+<li>ToS Ethics in Research Use of Library Patron Data.pdf - <a href="https://osf.io/bygj3/">https://osf.io/bygj3/</a></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///home/amanita/scripts/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///home/amanita/scripts/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///home/amanita/scripts/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'file:///home/amanita/scripts/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/amanita/scripts/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/amanita/scripts/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'file:///home/amanita/scripts/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+Data management in the transformative research library
+* research data
+** management (supporting researchers)
+data management plans to fulfill funding requirements, etc
+** discovering
+how do we make data discoverable and help our users discover data to use in their research or to meet their information needs?
+
+data catalogs
+
+inclusion of data sources (ICPSR, Dataverse) in discovery layer (*challenges)
+
+** working with
+providing expertise and education on using and creating data
+r
+gis
+etc
+
+** publishing and/or preserving
+Handling data in IRs?
+Partnering with 
+
+* collections as data
+  https://collectionsasdata.github.io/facets/
+* patron data
+* library data
+** data warehousing - connecting silos - leveraging external data
+** user privacy! 
+ - Becky Yoose
+ - ToS Ethics in Research Use of Library Patron Data.pdf - https://osf.io/bygj3/
+
