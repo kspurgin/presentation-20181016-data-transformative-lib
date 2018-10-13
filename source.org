@@ -1,18 +1,96 @@
 #+AUTHOR: Kristina M. Spurgin
-#+TITLE: Data management in the transformative research library
+#+TITLE: Data in the transformative research library
 #+EMAIL: kspurgin@email.unc.edu
 #+DATE: 2018-10-16
 #+REVEAL_TRANS: none
 #+REVEAL_THEME: sky
+#+REVEAL_MIN_SCALE: 1
+#+REVEAL_MAX_SCALE: 1
+#+REVEAL_MARGIN: 0
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 #+EXPORT_FILE_NAME: index.html
 
+* Introduction
+ - Who am I?
+ - Notes and disclaimers
+#+BEGIN_NOTES
+ - Library Data Strategist at UNC Chapel Hill Libraries
+ - Despite my job title, I am not an expert in all the topics I'm going to talk about today!
+ - It is impossible to comprehensively cover this topic in 45 minutes.
+ - I have chosen to cover areas of particular importance or where there are developments I believe are particularly interesting
+ - This presentation 
+#+END_NOTES
 
-* research data
-** management (supporting researchers)
-data management plans to fulfill funding requirements, etc
-** discovering
+* Context: The transformative research library
+ - Libraries as organizations are transforming
+ - Working in a transformative library transforms you
+ - A transformative library transforms the world
+
+#+BEGIN_NOTES
+We are transforming our missions and the services we offer. 
+The types of materials we make available and the models we use to do that are transforming and expanding. 
+
+Library staff are required to: 
+- extend their existing skills and experise into new domains
+- gain new skills and expertise
+
+#+END_NOTES
+* Data
+   - Research data
+   - Patron/user data
+   - Collections as data
+   - Library data
+* Research Data
+#+CAPTION: USGS Science Data Lifecycle Model. Boxes indicate the main Model elements, and the shaded arrows below represent cross-cutting elements.^{1}
+#+NAME:   fig:data_lifecycle.png
+[[./images/data_lifecycle.png]]
+
+#+BEGIN_NOTES
+The traditional research library mission was to collect the published/shared products of research. 
+
+Today, research libraries are expanding their missions to include support for the entire research lifecycle. 
+
+1. Faundeen, John L., Thomas E. Burley, Jennifer A. Carlino, David L. Govoni, Heather S. Henkel, Sally L. Holl, Vivian B. Hutchison, et al. 2014. “The United States Geological Survey Science Data Lifecycle Model.” Report 2013–1265. Open-File Report. Reston, VA. USGS Publications Warehouse. https://doi.org/10.3133/ofr20131265.
+#+END_NOTES
+** Data management plans (DMPs)
+ - Required by an increasing number of funders ([[https://dmptool.org/public_templates][src]])
+ - Calls for decisions about: 
+  - metadata
+  - organizing data
+  - selecting file formats
+  - supporting sharing and reuse of data
+  - data archiving and preservation
+  - rights, licensing, open access considerations
+
+*These are not new concepts or skills for libraries!*
+
+#+BEGIN_NOTES
+A growing number of funders require researchers applying for funding to file a data management plan. Different funders have different requirements.
+
+The library is a place where this expertise already exists. It is a much smaller leap for librarians to extend their existing expertise in these areas to apply to data, than it is for researchers to learn all these skills from scratch.
+#+END_NOTES
+
+** Library services and tools related to DMP
+ - [[https://dmptool.org][DMPTool]]
+ - Online resources and guides ([[https://guides.nyu.edu/data_management][NYU]], [[https://libraries.mit.edu/data-management/][MIT]], [[https://www.lib.umn.edu/datamanagement/][Minnesota]])
+ - Workshops, trainings, one-on-one consultations
+#+BEGIN_NOTES
+DMPTool
+ - Free, open-source, online application
+ - Point-and-click creation of funder specific DMPs
+ - Clearinghouse for DMP requirements and best practices
+ - Begun in 2011, the original contributing institutions included:
+   - California Digital Library
+   - UCLA Libray
+   - UC San Diego Libraries
+   - University of Illinois, Urbana-Champaign Library
+   - University of Virginia Library
+
+#+END_NOTES
+
+** Data discovery
+
 how do we make data discoverable and help our users discover data to use in their research or to meet their information needs?
 
 data catalogs
@@ -29,6 +107,11 @@ etc
 Handling data in IRs?
 Partnering with 
 
+[[http://service.re3data.org/search][Registry of Research Data Repositories]] (Purdue University Libraries is a partner)
+#+BEGIN_NOTES
+Some funders require that research data be made available in an open access repository. ([[http://roarmap.eprints.org/cgi/search/archive/advanced?screen=Search&dataset=archive&policymaker_type=funder&policymaker_type=funder_and_research_org&policymaker_name_merge=ALL&policymaker_name=&policy_adoption=&policy_effecive=&mandate_content_types=data&mandate_content_types_merge=ANY&apc_fun_url_merge=ALL&apc_fun_url=&satisfyall=ALL&order=policymaker_name&_action_search=Search][src]])
+#+END_NOTES
+
 * collections as data
   https://collectionsasdata.github.io/facets/
 * patron data
@@ -37,4 +120,5 @@ Partnering with
 ** user privacy! 
  - Becky Yoose
  - ToS Ethics in Research Use of Library Patron Data.pdf - https://osf.io/bygj3/
+
 
