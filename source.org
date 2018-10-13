@@ -1,6 +1,8 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 #+EXPORT_FILE_NAME: index.html
+#+REVEAL_TRANS: none
+#+REVEAL_TITLE_SLIDE_BACKGROUND ./images/02_yinkpinkink.jpg
 
 Data management in the transformative research library
 * research data
