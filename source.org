@@ -1,10 +1,14 @@
+#+AUTHOR: Kristina M. Spurgin
+#+TITLE: Data management in the transformative research library
+#+EMAIL: kspurgin@email.unc.edu
+#+DATE: 2018-10-16
 #+REVEAL_TRANS: none
-#+REVEAL_TITLE_SLIDE_BACKGROUND: ./images/02_yinkpinkink.jpg
+#+REVEAL_THEME: sky
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 #+EXPORT_FILE_NAME: index.html
 
-Data management in the transformative research library
+
 * research data
 ** management (supporting researchers)
 data management plans to fulfill funding requirements, etc
