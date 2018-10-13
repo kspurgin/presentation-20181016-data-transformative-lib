@@ -1,3 +1,5 @@
+#+OPTIONS: toc:nil
+
 Data management in the transformative research library
 * research data
 ** management (supporting researchers)
