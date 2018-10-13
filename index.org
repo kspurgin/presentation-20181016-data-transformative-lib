@@ -1,4 +1,5 @@
 #+OPTIONS: toc:nil
+#+OPTIONS: num:nil
 
 Data management in the transformative research library
 * research data
