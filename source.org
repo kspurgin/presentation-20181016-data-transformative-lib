@@ -1,5 +1,5 @@
 #+AUTHOR: Kristina M. Spurgin
-#+TITLE: Data in the transformative research library
+#+TITLE: Data's Role in the Transformative Research Library
 #+EMAIL: kspurgin@email.unc.edu
 #+DATE: 2018-10-16
 #+REVEAL_TRANS: none
@@ -19,7 +19,8 @@
  - Despite my job title, I am not an expert in all the topics I'm going to talk about today!
  - It is impossible to comprehensively cover this topic in 45 minutes.
  - I have chosen to cover areas of particular importance or where there are developments I believe are particularly interesting
- - This presentation 
+ - Though the topics are presented in a more or less linear fashion, they are truly overlapping and inter-related
+ - This presentation is available online with speaker notes that include details mentioned and citations
 #+END_NOTES
 
 * Context: The transformative research library
@@ -34,6 +35,13 @@ The types of materials we make available and the models we use to do that are tr
 Library staff are required to: 
 - extend their existing skills and experise into new domains
 - gain new skills and expertise
+
+The transformative library changes the world by: 
+- helping researchers find, access, use, and create new knowledge
+- this includes creating collections that can be aggregated and used programmatically in novel ways
+- knocking down barriers to access
+
+For an inspiring vision of the transformative future of libraries, see the [[https://future-of-libraries.mit.edu/][MIT Future of Libraries Task Force Preliminary Report]].
 
 #+END_NOTES
 * Data
@@ -90,13 +98,74 @@ DMPTool
 #+END_NOTES
 
 ** Data discovery
+Our users need data to: 
+ - conduct research
+ - complete coursework
+ - meet personal information needs
 
-how do we make data discoverable and help our users discover data to use in their research or to meet their information needs?
+*Libraries are exploring ways to help users to find the data they need*
 
-data catalogs
+** Aggregation of metadata from data repositories in discovery tools
+ - [[https://www.trln.org/][Triangle Research Libraries Network (TRLN)]] shared catalog
+   - One shared index and [[http://search.trln.org][union catalog]] of Duke, NCCU, NCSU, and UNC holdings
+   - Individual institutional catalogs for Duke, UNC, and NCSU
+ - External feeds of metadata from two data repositories mapped into catalog
+   - [[https://dataverse.unc.edu/dataverse/odum][UNC Odum Institute Archive Dataverse]]
+     - [[http://search.trln.org/search?N=211056+210952][~2895 dataset records]]
+     - unrestricted sets only
+     - appear for all institutions
+   - [[https://www.icpsr.umich.edu/icpsrweb/ICPSR/][Inter-university Consortium for Political and Social Research (ICPSR)]]
+     - [[http://search.trln.org/search?N=210945][~10,696 study records]] (some have multiple data files associated)
+     - appear for Duke, NCSU, and UNC only
 
-inclusion of data sources (ICPSR, Dataverse) in discovery layer (*challenges)
+#+BEGIN_NOTES
+"The Odum Institute Archive Dataverse contains social science data curated and archived by the Odum Institute Data Archive at the University of North Carolina at Chapel Hill. Some key collections include the primary holdings of the Louis Harris Data Center, the National Network of State Polls, and other Southern-focused public opinion data."
 
+ICPSR: "An international consortium of more than 700 academic institutions and research organizations...ICPSR maintains a data archive of more than 500,000 files of research in the social sciences. It hosts 16 specialized collections of data in education, aging, criminal justice, substance abuse, terrorism, and other fields."
+#+END_NOTES
+
+** UNC Odum Institute Archive Dataverse record
+#+CAPTION: UNC Odum Institute Archive Dataverse record appearing in the UNC instance of the TRLN shared catalog ([[https://search.lib.unc.edu/search?R=DataverseOdumCollectiondoi1015139S311927][link]])
+#+NAME:   fig:dataverse_record.png
+[[./images/dataverse_record.png]]
+
+** ICPSR record in TRLN Shared Catalog
+#+CAPTION: ICPSR record appearing in the TRLN shared catalog ([[http://search.trln.org/search?id=ICPSR36862][link]])
+#+NAME:   fig:icpsr_record.png
+[[./images/icpsr_record.png]]
+
+** Data catalogs
+#+BEGIN_QUOTE
+A data catalog is an aggregation of metadata and corresponding links to data. The catalogs are used to bring together related data that may be hosted in different repositories to make it easier for researchers to find data. Current catalogs range from aggregating research data from an institution to from an entire field.
+#+END_QUOTE
+Different from a data repository -- data itself is not stored in the catalog
+
+[[https://www.datacatalogcollaborationproject.org/][Data Catalog Collaboration Project (DCCP)]]
+#+BEGIN_NOTES
+"The Data Catalog Collaboration Project (DCCP) helps researchers make their own data discoverable, and locate usable biomedical data that is not readily accessible elsewhere online. The DCCP is a collaboration of academic libraries working to highlight institutional biomedical research data using an open source catalog."
+#+END_NOTES
+** Responsibilities in larger data discovery ecosystem
+If we are building institutional or consortial data repositories or catalogs:
+ - Support harvesting and aggregation of your metadata
+   - OAI-PMH, [[http://www.openarchives.org/rs/toc][ResourceSync]], or an API that supports metadata harvesting
+ - Ensure metadata is interoperable
+   - Use standard data description schemata ([[http://www.ddialliance.org/training/why-use-ddi][DDI]], [[http://www.dcc.ac.uk/resources/metadata-standards/abcd-access-biological-collection-data][ABCD]], [[https://guides.nyu.edu/data_management/encoding-discipline][etc.]])
+   - Share your metadata application profiles
+ - Register your collections with appropriate external resources
+   - [[http://service.re3data.org/search][Registry of Research Data Repositories]]
+
+#+BEGIN_NOTES
+"The Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH) is a low-barrier mechanism for repository interoperability. Data Providers are repositories that expose structured metadata via OAI-PMH. Service Providers then make OAI-PMH service requests to harvest that metadata." ([[https://www.openarchives.org/pmh/][src]])
+
+"ResourceSync is a self-describing set of capabilities designed to keep content in sync between a provider and consumer of that content. The capabilities of a ResourceSync endpoint can be adapted to meet specific community requirements as it extends the Sitemaps protocol used by Google and other search engines.
+
+The project team has been motivated to leverage ResourceSync as an alternative, or next-generation, approach to harvesting repository metadata by aggregators. ResourceSync is attractive because it utilizes native qualities of the web to solve the problem of keeping web-published resources in sync as inevitable changes occur. Nothing special is required beyond publication of a sitemap and change lists, leveraging timestamps to indicate that changes have been published and when they occurred. We anticipated that it’d be an improvement over the Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH)." ([[http://hydrainabox.samvera.org/2017/06/22/resourcesync.html][src]])
+
+"DDI [Data Documentation Initiative] encourages comprehensive description of data for discovery and analysis and supports effective data sharing. Because DDI is a structured standard, it facilitates machine-actionability and interoperability and it can actually be used to drive systems. Another feature of DDI is its focus on metadata reuse; “enter once, use often” means you can reuse metadata over the course of the data life cycle to avoid costly duplication of effort." ([[http://www.ddialliance.org/training/why-use-ddi][src]])
+
+"The Access to Biological Collections Data (ABCD) Schema is an evolving comprehensive standard for the access to and exchange of data about specimens and observations (a.k.a. primary biodiversity data). The ABCD Schema attempts to be comprehensive and highly structured, supporting data from a wide variety of databases. It is compatible with several existing data standards. Parallel structures exist so that either (or both) atomised data and free-text can be accommodated." ([[http://www.dcc.ac.uk/resources/metadata-standards/abcd-access-biological-collection-data][src]])
+
+#+END_NOTES
 ** working with
 providing expertise and education on using and creating data
 r
@@ -107,7 +176,19 @@ etc
 Handling data in IRs?
 Partnering with 
 
-[[http://service.re3data.org/search][Registry of Research Data Repositories]] (Purdue University Libraries is a partner)
+
+[[https://dataverse.org/blog/comparative-review-various-data-repositories][A Comparative Review of Various Data Repositories]] created by Dataverse, and including:
+Analyze Boston (CKAN)
+data.world
+Dryad
+figshare
+Harvard Dataverse
+Mendeley Data
+Open ICPSR
+Zenodo
+Open Science Framework
+Kaggle.com
+
 #+BEGIN_NOTES
 Some funders require that research data be made available in an open access repository. ([[http://roarmap.eprints.org/cgi/search/archive/advanced?screen=Search&dataset=archive&policymaker_type=funder&policymaker_type=funder_and_research_org&policymaker_name_merge=ALL&policymaker_name=&policy_adoption=&policy_effecive=&mandate_content_types=data&mandate_content_types_merge=ANY&apc_fun_url_merge=ALL&apc_fun_url=&satisfyall=ALL&order=policymaker_name&_action_search=Search][src]])
 #+END_NOTES
