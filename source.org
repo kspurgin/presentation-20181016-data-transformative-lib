@@ -534,7 +534,7 @@ Lastly, there's the fact of each of our patrons as individuals with their own pe
 ** Shout outs
 [[https://docs.google.com/presentation/d/1_W-3I9CSz6Uu5pFnKsc2USMGA4kOxzx25XiUj_e57bE/edit#slide=id.g35b47fb8f7_0_256][Wrangling Library Patron Data]] - Becky Yoose, LITA Webinar 2018-04-11
 
-Asher, Andrew, Techonologies of Surveillance Group, Kristin Briney, Gabriel Gardner, Lisa Hinchliffe, Jacob Levernier, Bethany Nowviskie, Dorothea Salo, and Yasmeen Shorish. “Ethics in Research Use of Library Patron Data: Glossary and Explainer.” Digital Library Federation, Ethics Subgroup, October 2, 2018. https://doi.org/10.17605/OSF.IO/XFKZ6.
+“Ethics in Research Use of Library Patron Data: Glossary and Explainer.” Digital Library Federation, Ethics Subgroup, October 2, 2018. https://doi.org/10.17605/OSF.IO/XFKZ6.
 
 Salo, Dorothea. “We, Surveilled and Afraid, in a World We Never Made.” Speaker Deck, October 11, 2018. https://speakerdeck.com/dsalo/we-surveilled-and-afraid-in-a-world-we-never-made.
 
@@ -618,5 +618,13 @@ Instruction and workshops to think about if we're not doing them already:
  - [[https://datadetox.myshadow.org/detox][Data Detox Kit]] from [[https://tacticaltech.org/][Tactical Technology Collective]]
 
 #+BEGIN_NOTES
-This again brings it back to that orthogonal topic of helping our users become more deeply data literate. 
+This again brings it back to that orthogonal topic of helping our users become more deeply data literate, which is where I will stop talking and see what you have to say...
 #+END_NOTES
+
+* Thank you
+#+CAPTION: Any questions?
+#+NAME:  fig:any_questions.jpg
+#+attr_html: :height 400
+[[./images/any_questions.jpg]]
+
+Presentation + supplementary materials: https://is.gd/20181016_ndhl
