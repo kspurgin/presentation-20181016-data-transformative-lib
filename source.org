@@ -165,6 +165,8 @@ Many libraries, this one among them, provide *training and consultation* on a wi
 
 I see this as an extension of libraries' long history of collaborating with researchers to provide text encoding, analysis, and custom web interfaces to explore digital research projects mainly in the digital humanities. 
 
+The Jupyter Notebooks for metadata mapping documentation are publicly viewable on Github. Look for the .ipynb files in [[https://github.com/trln/data-documentation/tree/master/marc][this directory]] and eventually other sections of the [[https://github.com/trln/data-documentation][TRLN data documentation repository]].
+
 *More info/references*
 "The *Jupyter Notebook* is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more." ([[http://jupyter.org/][src]])
 
@@ -385,6 +387,7 @@ As a spreadsheet nerd and wannabe science nerd, this category is particularly ex
 The image here is from a Zooniverse project under review, which uses crowdsourcing to transcribe old climate data. Imagine if all the old data in logbooks were made searchable, crunchable! What might we learn? 
 
 *More info/references*
+Some examples of projects in this category:
  - [[https://osf.io/c3egt/][Hopkins Marine Station CalCOFI hydrobiological survey of Monterey Bay, CA: 1951 - 1974]]
 " Description: In 1951, the Hopkins Marine Station of Stanford University became a partner in the California Cooperative Oceanic Fisheries Investigations (CalCOFI) program in order to collect oceanographic data in and near Monterey Bay. The aim of the program was to conduct joint fisheries-oceanographic cruises that would help researchers understand what contributed to observed fluctuations in the California sardine fishery. Hopkins condutced weekly sampling (more or less) continuously from March 1951 through June 1974. The raw and aggregated data for most of these cruises currently reside in analog form (handwritten data logs, annual reports, etc.) in the library at the Hopkins Marine Station. The dataset includes variables such as temperature, salinity, oxygen, phosphate, silicate, phytoplankton and zooplankton community structure and abundance, meteorological conditions, fish and marine mammal counts, and more. The collection includes forty-four 3-ring or loose-bound notebooks, twenty-two small, bound notebooks, minutes from annual meetings, annual data reports, and other ephemera. The Hopkins CalCOFI collection is large, completely analog, and very heterogeneous. We are in the early phases of planning a curation strategy, but our general objectives for the dataset are to digitize it, add metadata, convert sampling data to actionable formats, and make it all public. "
 
@@ -487,6 +490,76 @@ My colleagues at Duke University Libraries, Jaquie Samples and Dennis Christman 
  - moving toward one extractor to rule them all...
  - metadata-first IA digitization->HT ingest workflow
 
+#+BEGIN_NOTES
+*HSL weeding project*
+Our Health Sciences Library was starting a weeding project which included decision-making about a fair amount of older material. Their initial idea was to have student workers search HathiTrust for each title published before a certain year to see if the full text was freely available there. Thankfully they brought this project to us instead. We extracted from our ILS the relevant bibliographic information on the HSL collection being weeded. We compared that data against the [[https://www.hathitrust.org/hathifiles][HathiFiles]]. That comparison was used to produce a report of: 
+ - clear matches where the full text of the HSL volume was definitely freely available via HathiTrust
+ - candidates for manual checking -- this was a report of ambiguous matches that a human should look at
+
+*Materials Review project*
+Library Data Strategy & Services staff assisted the Materials Review team to develop spreadsheet reports that selectors and faculty could use to make decisions about materials cancellations. Creating these reports involved retrieving data from multiple sources, manipulating it so it could be merged, and outputting a useful final product. Data sources included: 
+ - bibliographic records from ILS
+ - order records from ILS (cost)
+ - reports from SerialsSolutions on our tracked holdings, including print and online ISSN for each title (when available), packages of with the title is part, dates of holdings for the title in each package, OA status
+ - usage statistics
+
+*One Extractor project*
+We had an "extract the catalog" script for our existing consortial online catalog. Then, we began developing a new version of that catalog, which required the data to be extracted in a slightly different way. In addition, we needed to extract records from our catalog in a slightly different way in order to prepare metadata for batches of titles to be ingested into HathiTrust. At some point, we also needed to extract our whole catalog---in a slightly different way---so that Google could analyze whether our percentage of unique materials made it worth partnering with us for a large scale digitization project. 
+
+The extraction process overall is always the same. What changes is stuff like: 
+ - need to extract one bib record with data from all attached item and holdings records; versus
+ - need to extract one copy of the bib record for each attached item record, with data from that item record; and
+ - what fields/subfields data from the attached non-bib records are mapped to
+ - what field/subfield bib record number is mapped to
+
+Instead of developing a complete extract script for each of these needs, LDSS staff have created an general extraction script that can be configured to output the extracted data in various ways. 
+
+*Metadata-first IA -> HT digitization to preservation workflow*
+We are on our second Internet Archive (IA) Scribe contract. As part of this contract, IA provides a Table Top Scribe book scanner at our institution, along with Scribe operations staff to do the digitization. 
+
+IA is a great resource for bulk digitization and making digitized works accessible, however it is not a true preservation platform. UNC also ingests all Scribe-digitized materials into HathiTrust, which is a preservation platform. UNC librarians also want the URLs for the digitized versions added to the bib records of the print items that were scanned. 
+
+LDSS is responsible for adding these URLs back into our catalog records, and the preparation of metadata for HathiTrust ingests.
+
+In our first Scribe contract, the workflow was roughly: 
+ - selectors choose items for digitization
+ - staff and student workers:
+   - assess whether item meets physical requirements for Scribe scanning
+   - verify item has not already been digitized by another institution and added to a trusted repository
+ - If the item passed the previous two tests, the worker then:
+   - Found bib record in online catalog or ILS and pasted that into IA Scribe metadata spreadsheet
+   - Copy/pasted various metadata elements (author, title, language, publisher, etc) from catalog into IA Scribe metadata spreadsheet
+ - Items and spreadsheet were passed to Scribe operator who conducted digitization. 
+   - Part of this process involved IA's software using the bib record number from the spreadsheet to grab that bib record from our catalog via a Z39.50 request -- the bib record is stored as MARC-XML in the IA data package ([[https://ia801600.us.archive.org/34/items/otterbeinhymnalf00chur/otterbeinhymnalf00chur_marc.xml][example]]). The bib record data is also mapped into data for display in the IA record page for the item ([[https://archive.org/details/otterbeinhymnalf00chur][example]]).
+ - Monthly, LDSS pulled report of newly digitized items from IA. Report included bib record number submitted for item, URL of digitized item, and any volume/issue designation submitted for item.
+ - Quarterly, LDSS used similar report from IA to compile a HathiTrust ingest
+
+A number of metadata problems tended to emerge and complicate or block LDSS work, leading to delays in catalog link addition and HathiTrust ingest. These included: 
+
+- Inconsistency in bib record number format submitted at digitization time (with vs. without check digit) leading to extra work to normalize bib numbers. Our processes hinge upon a standard form of bib number.
+- IA has basically no metadata quality requirements, while HathiTrust has fairly stringent metadata quality requirements. At the point of submitting ingests, HathiTrust would sometimes reject hundreds of items for issues such as bib record lacking OCLC number or date data, or there being no volume/issue for a serial or multi-volume monograph.
+- Missing volume/issue data caused delays and tedious manual work to add URLs to bib records for serials and multi-volume sets. LDSS staff would have to try to figure out which item each digitized object represented, add that item's volume/issue info to the IA data, and add it to the $3 of the 856 field containing the link to that item in the bib record. We believe users should know from looking at the record where they are going to be taken when they click a link. They shouldn't have to click on multiple links to get to the volume that's of interest. 
+
+For these reasons, in planning for our second Scribe contract, I advocated firmly for a metadata-first approach. This centers upon a newly designed spreadsheet for preparing the metadata to be passed along to the Scribe operator with the items to be digitized. 
+
+When a worker begins work on a new batch of items to be Scribed, they make a copy of our Scribe spreadsheet template. This spreadsheet is set up to connect to our ILS (via III Sierra's bib and item record APIs). 
+
+Now, when a physical item has been selected and has passed the first couple of checks, all the worker has to do is find the matching bib *and item* records in the ILS and paste the bib and item record numbers into the spreadsheet. 
+
+The spreadsheet: 
+ - normalizes the record numbers, ensuring they are passed on to Scribe operator without check digit
+ - pulls in the title, author, language, etc metadata that used to need to be manually copy/pasted (which left room for errors)
+ - consistently pulls in volume/issue information for every item
+ - runs several metadata quality checks for issues that will block HathiTrust ingest
+ - if metadata issues are found, uses the item location code to show where to route the item for metadata updates
+
+One person in our Special Collections Technical Services and one person in our main Technical Services have been assigned as main contacts for IA/HT metadata fixes. When the spreadsheet flags a metadata problem for an item, the worker physically places the item on the designated shelf where the Tech Services folks will check for them. The metadata fixes typically are extremely quick, and then the Tech Services staff route the item back to the worker who brought it to them. Often the item proceeds for digitization with the original batch of which it was part. 
+
+The effect of this is: 
+ - metadata issues are taken care of at the point in the process where it makes the most sense---when the physical item is in hand and can be referred to---rather than discovered later in bulk by LDSS, a team who does not usually handle physical materials at all
+ - metadata issues are fixed before we push metadata out into the larger metadata ecosystem. The metadata in IA and HT is correct from the start, with no extra work after the fact
+ - No manual copy/paste errors and no missing volume/item data 
+#+END_NOTES
 ** On the table: Data warehousing
 #+CAPTION: Conceptual flow of data warehousing^{1}
 #+NAME:  fig:data_warehousing.png
@@ -508,7 +581,10 @@ I am in no way an assessment librarian, and am by nature a critic of overrelianc
 
 One approach to making this work easier is data warehousing. There seems to be a trend in this direction. I keep seeing programs on the topic at Innovative Users Group meetings, and there was a racous breakout session on the topic at Code4Lib 2018.
 
-A couple of years ago I had floated the idea of data warehousing at UNC, primarily to support technical services workflows not supported by our ILS and other tools.
+A couple of years ago I had floated the idea of data warehousing at UNC, primarily to support technical services workflows not supported by our ILS and other tools, such as: 
+ - semi-automated reconciliation of vendor-provided MARC record sets against entitlement lists for e-resource collections
+ - experiments with leveraging open linked data for authority control work
+ - ability to run (and schedule to run) more flexible and sophisticated reports than we an within our ILS, with applications like: finding records with invalid MARC
 
 Now that there's movement/interest from the assessment side, it seems this might make it onto our real projects list when certain key positions are finally filled. 
 
